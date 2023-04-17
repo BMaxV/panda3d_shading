@@ -12,9 +12,16 @@ class Wrapper:
         self.b.enableParticles()
         self.ob=load_object(self.b)
         
+        tex1=loader.loadTexture('testgrid.png')
+        tex2=loader.loadTexture('ground.jpg')
+        #self.ob.setTexture(tex)
+        tex1 = loader.loadTexture('testgrid.png')
+        self.ob.setShaderInput("mytexture1", tex1)
+        self.ob.setShaderInput("mytexture2", tex2)
+        
         shader = Shader.load(Shader.SL_GLSL,
-                     vertex="myshader.vert",
-                     fragment="myshader.frag")
+                     vertex="02myshader.vert",
+                     fragment="02myshader.frag")
         self.ob.setShader(shader)
         
         self.t=0

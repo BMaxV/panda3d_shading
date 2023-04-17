@@ -5,6 +5,7 @@ uniform sampler2D p3d_Texture0;
 // Input from vertex shader
 in vec2 texcoord;
 in vec4 p3d_Color;
+
 // Output to the screen
 out vec4 p3d_FragColor;
 
