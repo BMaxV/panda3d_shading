@@ -8,10 +8,10 @@ here is a GLSL spec
 
 # step 1, wtf is anyting?
 
-[meme](01output.png)
+![meme](01output.png)
 
 # step 2, what are textures, 
 
 where do they come from and how are they mixed and applied.
 
-[meme](02output.png)
+![meme](02output.png)
