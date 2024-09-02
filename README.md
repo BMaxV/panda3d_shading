@@ -4,6 +4,10 @@ After struggling with shading in panda3d for some time, I decided to give it ano
 
 The structure for this repo is that the scripts are numbered according to the sections below and should 'just work'.
 
+this resource was really good:
+https://github.com/lettier/3d-game-shaders-for-beginners
+also shadertoy is a thing.
+
 # dependencies
 
 panda3d for rendering
@@ -47,4 +51,12 @@ prepared models with uv mappings
 # step 5, animated texture effects
 
 on those models.
+
+# step 7, world space transparency
+
+using `p3d_ModelMatrix * p3d_vertex` to get the world space position of a glsl vertex, then in the fragment shader it's pretty trivial to take the magic number value of 20.5 (position of the cube + 0.5) and letting the cube become transparent with distance.
+
+![meme](world_space_transparency.png)
+
+
 
