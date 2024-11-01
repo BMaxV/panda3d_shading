@@ -1,7 +1,7 @@
 from direct.showbase.ShowBase import ShowBase
 from panda3d.core import Shader
 from panda3d.core import TransparencyAttrib
-from panda_object_create import panda_object_create_load
+#from panda_object_create import panda_object_create_load
 from direct.task import Task
 from panda3d.core import LVector4f
 
@@ -52,7 +52,7 @@ class Wrapper(ShowBase):
                      fragment="08myshader.frag")
         self.ob.setShader(shader)
         self.myshader = shader
-        #self.t=0
+        self.t=0
         
         self.taskMgr.add(self.main)
     
