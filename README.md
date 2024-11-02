@@ -58,5 +58,8 @@ using `p3d_ModelMatrix * p3d_vertex` to get the world space position of a glsl v
 
 ![meme](world_space_transparency.png)
 
+# step 8, UI shading
 
+you can use all of that for UI elements as well, which gives more choice for styling and animating textures.
 
+![meme](08UI.png)
