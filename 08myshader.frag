@@ -1,17 +1,16 @@
 #version 150
 
+vec4 color1;
+vec4 color2;
+bvec3 temp;
+
 uniform sampler2D p3d_Texture0;
-uniform sampler2D p3d_Texture1;
-uniform float osg_FrameTime;
-uniform sampler2D bunnytex;
-vec4 color;
+uniform sampler2D mytexture1;
 
 // Input from vertex shader
-in float totaltime;
 in vec2 texcoord;
 in vec4 p3d_Color;
 in vec4 world_pos;
-in vec4 myany;
 uniform float myfloat;
 
 // Output to the screen
@@ -19,14 +18,29 @@ out vec4 p3d_FragColor;
 
 void main() {
   
-  color = texture(bunnytex, texcoord);
-  //color.a = 1-color.r;
-  //color.r = sin(world_pos.x);
-  //color.r = sin(texcoord.x*15+(totaltime+1));
-  color.r = sin(texcoord.x*15+(osg_FrameTime+1));
-  //color.r = sin(texcoord.x*15+( myfloat+1));
-  //color.r = sin(texcoord.x*10+(myany.x*50+1));
-  //color.a = min(color.a,p3d_Color.y) ;
+  // solid color
+  color1.r = 1;
+  color1.g = 0;
+  color1.b = 0;
+  color1.a = 1;
   
-  p3d_FragColor = color;
+  // or the texture color
+  color1 = texture(mytexture1, texcoord);
+  
+  // you can also set green to 0 and alpha to 0, and you
+  // get a bar that gets empty. plus, all the other usual mixing and
+  // texturing will also work.
+  
+  color2.r = 0;
+  color2.g = 1;
+  color2.b = 0;
+  color2.a = 0;
+  
+  if (texcoord.x < myfloat) {
+  p3d_FragColor =color1;
+}
+  else {
+  p3d_FragColor=color2;
+}
+
 }
